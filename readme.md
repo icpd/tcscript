@@ -1,3 +1,5 @@
+Implementing a bad network using "tc-netem" and "tc-filter"
+
 ## Usage
 ```bash
 $ ./tc.sh
