@@ -16,11 +16,11 @@ LOSS=$DEFAULT_LOSS
 
 # 打印帮助信息
 print_help() {
-    echo "用法: $(basename "$0") [-h] [-i INTERFACE] [-a IP] [-p PORT] [-d DELAY] [-l LOSS] [-r] [-s]"
+    echo "$(basename "$0") [-h] [-i INTERFACE] [-a TARGET_IP] [-p TARGET_PORT] [-d DELAY] [-l LOSS] [-r] [-s]"
     echo "       -h                  显示帮助信息"
     echo "       -i INTERFACE        指定网卡接口，默认为 $DEFAULT_INTERFACE"
-    echo "       -a IP               指定目标IP地址，默认为 $DEFAULT_IP"
-    echo "       -p PORT             指定目标端口号，默认为 $DEFAULT_PORT"
+    echo "       -a TARGET_IP        指定目标IP地址，默认为 $DEFAULT_IP"
+    echo "       -p TARGET_PORT      指定目标端口号，默认为 $DEFAULT_PORT"
     echo "       -d DELAY            指定网络延迟，秒s 毫秒ms 微秒us或者无单位数字，默认为 $DEFAULT_DELAY"
     echo "       -l LOSS             指定网络丢包率，默认为 $DEFAULT_LOSS"
     echo "       -r                  移除所有规则"
