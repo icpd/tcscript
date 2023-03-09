@@ -17,29 +17,28 @@ LOSS=$DEFAULT_LOSS
 # 打印帮助信息
 print_help() {
     echo "$(basename "$0") [-h] [-i INTERFACE] [-a TARGET_IP] [-p TARGET_PORT] [-d DELAY] [-l LOSS] [-r] [-s]"
-    echo "       -h                  显示帮助信息"
-    echo "       -i INTERFACE        指定网卡接口，默认为 $DEFAULT_INTERFACE"
-    echo "       -a TARGET_IP        指定目标IP地址，默认为 $DEFAULT_IP"
-    echo "       -p TARGET_PORT      指定目标端口号，默认为 $DEFAULT_PORT"
-    echo "       -d DELAY            指定网络延迟，秒s 毫秒ms 微秒us或者无单位数字，默认为 $DEFAULT_DELAY"
-    echo "       -l LOSS             指定网络丢包率，默认为 $DEFAULT_LOSS"
-    echo "       -r                  移除所有规则"
-    echo "       -s                  显示所有规则"
+    echo "       -h                  show help"
+    echo "       -i INTERFACE        interface (device), default $DEFAULT_INTERFACE"
+    echo "       -a TARGET_IP        target ip, default $DEFAULT_IP"
+    echo "       -p TARGET_PORT      target port，default $DEFAULT_PORT"
+    echo "       -d DELAY            network delay，second:s millisecond:ms microsecond:us or unitless digit，default $DEFAULT_DELAY"
+    echo "       -l LOSS             loss packets rate，default $DEFAULT_LOSS"
+    echo "       -r                  remove all rule"
+    echo "       -s                  show all rule"
     exit 0
 }
 
 # 打印规则
 print_rules() {
-    echo "队列："
+    echo "qdisc："
     tc qdisc show dev "$INTERFACE"
-    echo "过滤器："
+    echo "filter："
     tc filter show dev "$INTERFACE"
     exit 0
 }
 
 # 移除规则
 remove_rules() {
-    echo "移除所有规则"
     sudo tc qdisc del dev "$INTERFACE" root
     exit 0
 }
