@@ -1,6 +1,7 @@
 Implementing a bad network using "tc-netem" and "tc-filter"
 
 ## Usage
+
 ```bash
 $ ./tc.sh
 tc.sh [-h] [-i INTERFACE] [-a TARGET_IP] [-p TARGET_PORT] [-d DELAY] [-l LOSS] [-r] [-s]
@@ -13,3 +14,8 @@ tc.sh [-h] [-i INTERFACE] [-a TARGET_IP] [-p TARGET_PORT] [-d DELAY] [-l LOSS] [
        -r                  remove all rule
        -s                  show all rule
 ```
+
+## Other
+
+1. Change packet loss rate to 65%.
+`sudo tc qdisc change dev eth0 parent 1:1 handle 10: netem loss 65%`
