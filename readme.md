@@ -17,5 +17,5 @@ tc.sh [-h] [-i INTERFACE] [-a TARGET_IP] [-p TARGET_PORT] [-d DELAY] [-l LOSS] [
 
 ## Other
 
-1. Change packet loss rate to 65%.
+1. Change packet loss rate to 65%.  
 `sudo tc qdisc change dev eth0 parent 1:1 handle 10: netem loss 65%`
