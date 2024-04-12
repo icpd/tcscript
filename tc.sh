@@ -18,11 +18,11 @@ LOSS=$DEFAULT_LOSS
 print_help() {
     echo "$(basename "$0") [-h] [-i INTERFACE] [-a TARGET_IP] [-p TARGET_PORT] [-d DELAY] [-l LOSS] [-r] [-s]"
     echo "       -h                  show help"
-    echo "       -i INTERFACE        interface (device), default $DEFAULT_INTERFACE"
-    echo "       -a TARGET_IP        target ip, default $DEFAULT_IP"
-    echo "       -p TARGET_PORT      target port，default $DEFAULT_PORT"
-    echo "       -d DELAY            network delay，second:s millisecond:ms microsecond:us or unitless digit，default $DEFAULT_DELAY"
-    echo "       -l LOSS             loss packets rate，default $DEFAULT_LOSS"
+    echo "       -i INTERFACE        interface (device), default $DEFAULT_INTERFACE", required
+    echo "       -a TARGET_IP        target ip, default $DEFAULT_IP", required
+    echo "       -p TARGET_PORT      target port，default $DEFAULT_PORT", required
+    echo "       -d DELAY            network delay，second:s millisecond:ms microsecond:us or unitless digit，default $DEFAULT_DELAY", required
+    echo "       -l LOSS             loss packets rate，default $DEFAULT_LOSS", required
     echo "       -r                  remove all rule"
     echo "       -s                  show all rule"
     exit 0
